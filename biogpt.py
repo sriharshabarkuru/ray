@@ -5,7 +5,7 @@ from ray import serve
 import os
 
 
-@serve.deployment(ray_actor_options={"num_cpus": 1}, health_check_timeout_s=600)
+@serve.deployment(route_prefix="/biogpt")
 class BioGpt:
     def __init__(self):
         #self.pipe_biogpt = pipeline("text-generation", model="/model/biogpt")
