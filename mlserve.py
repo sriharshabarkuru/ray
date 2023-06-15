@@ -1,12 +1,7 @@
 import logging
 from typing import Optional
 
-import mlflow.pyfunc
 import pandas as pd
-import ray
-from mlflow.deployments import BaseDeploymentClient
-from mlflow.exceptions import MlflowException
-from mlflow.protos.databricks_pb2 import INVALID_PARAMETER_VALUE
 from ray import serve
 from starlette.requests import Request
 import os
