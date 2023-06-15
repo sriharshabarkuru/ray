@@ -1,6 +1,7 @@
 import logging
 from typing import Optional
 
+import mlflow
 import pandas as pd
 from ray import serve
 from starlette.requests import Request
