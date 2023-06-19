@@ -34,7 +34,7 @@ class MLflowDeployment:
 
     async def __call__(self, request: Request):
         df = await self._process_request_data(request)
-        return self.model.predict(df).to_json(orient="records")
+        return pd.Dataframe(self.model.predict(df)).to_json(orient="records")
 
 
 # 2: Deploy the deployment.
