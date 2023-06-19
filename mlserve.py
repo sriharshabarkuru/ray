@@ -27,6 +27,7 @@ class MLflowDeployment:
 
     async def _process_request_data(self, request: Request) -> pd.DataFrame:
         body = await request.body()
+        print ("body data",body)
         if isinstance(body, pd.DataFrame):
             return body
         return pd.read_json(json.loads(body))
