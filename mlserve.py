@@ -15,7 +15,7 @@ except ModuleNotFoundError:
 logger = logging.getLogger(__name__)
 
 
-@serve.deployment()
+@serve.deployment(ray_actor_options={"num_gpus": 1})
 class MLflowDeployment:
     def __init__(self):
         print("model path", os.environ["MODEL_PATH"])
