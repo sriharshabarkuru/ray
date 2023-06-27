@@ -10,7 +10,7 @@ class BioGpt:
     def __init__(self):
         #self.pipe_biogpt = pipeline("text-generation", model="/model/biogpt")
         print ("model path", os.environ["MODEL_PATH"])
-        self.pipe_biogpt = pipeline("text-generation", model=os.environ["MODEL_PATH"], , device="cuda:0")
+        self.pipe_biogpt = pipeline("text-generation", model=os.environ["MODEL_PATH"], device="cuda:0")
 
         print(f"Is CUDA available: {torch.cuda.is_available()}")
         print(f"CUDA device: {torch.cuda.get_device_name(torch.cuda.current_device())}")
