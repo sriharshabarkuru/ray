@@ -16,7 +16,7 @@ from torchvision import transforms
 class ImageModel:
     def __init__(self):
         self.model = mlflow.pytorch.load_model(os.environ["MODEL_PATH"])
-        self.preprocessor = preprocessor = transforms.Compose(
+        self.preprocessor = transforms.Compose(
             [
                 transforms.ToTensor(),
                 transforms.Normalize((0.1307,), (0.3081,))
