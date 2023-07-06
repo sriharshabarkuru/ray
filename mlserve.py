@@ -27,13 +27,14 @@ class MLflowDeployment:
 
     async def _process_request_data(self, request: Request) -> pd.DataFrame:
         body = await request.body()
+        print ("body data",body)
         if isinstance(body, pd.DataFrame):
             return body
         return pd.read_json(json.loads(body))
 
     async def __call__(self, request: Request):
         df = await self._process_request_data(request)
-        return self.model.predict(df).to_json(orient="records")
+        return pd.DataFrame(self.model.predict(df)).to_json(orient="records")
 
 
 # 2: Deploy the deployment.

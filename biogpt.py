@@ -5,13 +5,12 @@ from ray import serve
 import os
 
 
+# @serve.deployment(ray_actor_options={"num_gpus": 1})
 @serve.deployment()
 class BioGpt:
     def __init__(self):
-        #self.pipe_biogpt = pipeline("text-generation", model="/model/biogpt")
-        print ("model path", os.environ["MODEL_PATH"])
         self.pipe_biogpt = pipeline("text-generation", model=os.environ["MODEL_PATH"])
-
+        # self.pipe_biogpt = pipeline("text-generation", model=os.environ["MODEL_PATH"], device="cuda:0")
         # print(f"Is CUDA available: {torch.cuda.is_available()}")
         # print(f"CUDA device: {torch.cuda.get_device_name(torch.cuda.current_device())}")
 

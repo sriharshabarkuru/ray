@@ -1,1 +1,7 @@
-sympy
+tensorflow
+torchmetrics
+mlflow
+startlette
+pytorch
+torchvision
+ray[serve]
