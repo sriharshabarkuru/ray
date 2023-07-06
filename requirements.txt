@@ -2,6 +2,6 @@ tensorflow
 torchmetrics
 mlflow
 starlette
-pytorch
+PyTorch
 torchvision
 ray[serve]
