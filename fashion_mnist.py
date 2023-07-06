@@ -1,5 +1,6 @@
 import mlflow.pytorch
 from ray import serve
+import os
 
 from io import BytesIO
 from PIL import Image
