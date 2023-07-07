@@ -13,6 +13,7 @@ from torchvision import transforms
 
 
 
+
 @serve.deployment
 class ImageModel:
     def __init__(self):
@@ -23,7 +24,7 @@ class ImageModel:
                 transforms.Normalize((0.1307,), (0.3081,))
             ]
         )
-        self.logger = logging.getLogger(__name__)
+        self.logger = logging.getLogger("ray.serve")
 
     async def __call__(self, starlette_request: Request) -> Dict:
         image_payload_bytes = await starlette_request.body()
